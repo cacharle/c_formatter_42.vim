@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/04 18:21:23 by cacharle         ###   ########.fr        "
+"    Updated: 2020/10/04 19:54:48 by charles          ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -16,7 +16,7 @@ function! s:CFormatter42()
     normal! mq
     let s:equalprg_tmp = &equalprg
     let &equalprg = s:formatter_path
-    normal! gg=G
+    silent normal! gg=G
     let &equalprg = s:equalprg_tmp
     normal! `q
     normal! zz

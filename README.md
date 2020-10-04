@@ -8,8 +8,8 @@ Vim plugin for [c\_formatter\_42](https://github.com/dawnbeen/c_formatter_42).
 
 ### [Plug](https://github.com/junegunn/vim-plug)
 
-```
-Plug 'cacharle/c_formatter_42.vim', { 'do': 'git submodule update c_formatter_42' }
+```vim
+Plug 'cacharle/c_formatter_42.vim'
 ```
 
 ### Other
