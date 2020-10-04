@@ -1,0 +1,3 @@
+[submodule "c_formatter_42"]
+	path = c_formatter_42
+	url = https://github.com/dawnbeen/c_formatter_42
