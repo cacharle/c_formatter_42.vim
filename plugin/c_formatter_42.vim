@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/04 19:54:48 by charles          ###   ########.fr        "
+"    Updated: 2020/10/05 10:40:41 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -31,12 +31,12 @@ if !exists('g:c_formatter_42_format_on_save')
 endif
 
 if g:c_formatter_42_set_equalprg
-    let &equalprg = s:formatter_path
+    let &l:equalprg = s:formatter_path
 endif
 
 if g:c_formatter_42_format_on_save
     autocmd BufWritePre *.c,*.h :call s:CFormatter42()
 endif
 
-command! CFormatter42 call s:CFormatter42()
-nnoremap <F2> :CFormatter42<CR>
+autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
+autocmd FileType c,cpp nnoremap <F2> :CFormatter42<CR>
