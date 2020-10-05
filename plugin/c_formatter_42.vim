@@ -1,4 +1,4 @@
-" **************************************************************************** "
+"echo matchlist('acd', '\(a\)\?\(b\)\?\(c\)\?\(.*\)') **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
 "    c_formatter_42.vim                                 :+:      :+:    :+:    "
@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/05 10:40:41 by cacharle         ###   ########.fr        "
+"    Updated: 2020/10/05 11:17:41 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -14,10 +14,10 @@ let s:formatter_path = expand('<sfile>:h:h') . '/c_formatter_42/c_formatter_42'
 
 function! s:CFormatter42()
     normal! mq
-    let s:equalprg_tmp = &equalprg
+    let l:equalprg_tmp = &equalprg
     let &equalprg = s:formatter_path
     silent normal! gg=G
-    let &equalprg = s:equalprg_tmp
+    let &equalprg = l:equalprg_tmp
     normal! `q
     normal! zz
 endfunction
