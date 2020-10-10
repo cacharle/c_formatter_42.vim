@@ -21,6 +21,8 @@ USAGE                                                  *c_formatter_42.vim_usage
 
 Execute `:CFormatter42` or press `F2` to format the current file.
 
+Execute `:Norminette` to get the norminette result in a split.
+
 ===============================================================================
 CONFIGURATION                                  *c_formatter_42.vim_configuration*
 

@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/10 06:14:40 by cacharle         ###   ########.fr        "
+"    Updated: 2020/10/10 07:06:26 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -34,3 +34,28 @@ endif
 
 autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
 autocmd FileType c,cpp nnoremap <F2> :CFormatter42<CR>
+
+
+function! s:Norminette()
+    let l:current_file = expand('%:p')
+    belowright new
+    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+    call setline(1, 'Norminette result for ' . l:current_file)
+    call setline(2, '')
+    call setline(3, repeat('-', 80))
+    execute '$read !'. 'norminette ' . l:current_file
+    setlocal nomodifiable
+    let l:split_height = line('$')
+    if l:split_height > 30
+        let l:split_height = 30
+    endif
+    if l:split_height < 10
+        let l:split_height = 10
+    endif
+    silent execute 'resize ' . l:split_height
+    silent normal! gg
+    silent nnoremap <nowait> <buffer> q :q<CR>
+endfunction
+
+autocmd FileType c,cpp command! Norminette call s:Norminette()
+
