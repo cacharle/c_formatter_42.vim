@@ -6,29 +6,23 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/05 11:17:41 by cacharle         ###   ########.fr        "
+"    Updated: 2020/10/10 06:14:40 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
-let s:formatter_path = expand('<sfile>:h:h') . '/c_formatter_42/c_formatter_42'
+let g:c_formatter_42_exec           = get(g:, 'c_formatter_42_exec', 'c_formatter_42')
+let g:c_formatter_42_set_equalprg   = get(g:, 'c_formatter_42_set_equalprg', 0)
+let g:c_formatter_42_format_on_save = get(g:, 'c_formatter_42_format_on_save', 0)
 
 function! s:CFormatter42()
     normal! mq
     let l:equalprg_tmp = &equalprg
-    let &equalprg = s:formatter_path
+    let &equalprg = g:c_formatter_42_exec
     silent normal! gg=G
     let &equalprg = l:equalprg_tmp
     normal! `q
     normal! zz
 endfunction
-
-if !exists('g:c_formatter_42_set_equalprg')
-    let g:c_formatter_42_set_equalprg=0
-endif
-
-if !exists('g:c_formatter_42_format_on_save')
-    let g:c_formatter_42_format_on_save=1
-endif
 
 if g:c_formatter_42_set_equalprg
     let &l:equalprg = s:formatter_path

@@ -30,4 +30,7 @@ Toggle c_formatter_42 has the default formatter (e.i |'equalprg'|)
 Toggle format on save
     `let g:c_formatter_42_format_on_save=0/1`
 
+Change the path to the `c_formatter_42` executable
+    `let g:c_formatter_42_exec=[other path]`
+
 vim:ft=help

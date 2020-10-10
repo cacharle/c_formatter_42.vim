@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -vp "$HOME"/.vim/plugin
+mkdir -vp "$HOME"/.vim/doc
+cp -v ./plugin/c_formatter_42.vim "$HOME"/.vim/plugin
+cp -v ./doc/c_formatter_42.vim.txt "$HOME"/.vim/doc
