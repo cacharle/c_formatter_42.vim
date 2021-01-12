@@ -1,4 +1,4 @@
-"echo matchlist('acd', '\(a\)\?\(b\)\?\(c\)\?\(.*\)') **************************************************************************** "
+" **************************************************************************** "
 "                                                                              "
 "                                                         :::      ::::::::    "
 "    c_formatter_42.vim                                 :+:      :+:    :+:    "
@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2020/10/10 07:06:26 by cacharle         ###   ########.fr        "
+"    Updated: 2021/01/12 11:48:34 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -35,9 +35,13 @@ endif
 autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
 autocmd FileType c,cpp nnoremap <F2> :CFormatter42<CR>
 
-
 function! s:Norminette()
     let l:current_file = expand('%:p')
+
+    " let l:saved_makeprg = &makeprg
+    " let &makeprg = 'norminette'
+    " execute 'make! ' . l:current_file
+
     belowright new
     setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
     call setline(1, 'Norminette result for ' . l:current_file)
@@ -55,6 +59,8 @@ function! s:Norminette()
     silent execute 'resize ' . l:split_height
     silent normal! gg
     silent nnoremap <nowait> <buffer> q :q<CR>
+
+    " let &makeprg = l:saved_makeprg
 endfunction
 
 autocmd FileType c,cpp command! Norminette call s:Norminette()

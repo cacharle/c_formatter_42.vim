@@ -6,6 +6,7 @@ Vim plugin for [c\_formatter\_42](https://github.com/dawnbeen/c_formatter_42).
 
 ## Installation
 
+### c\_formatter\_42
 First you need to install [`c_formatter_42`](https://github.com/dawnbeen/c_formatter_42).  
 
 ```sh
@@ -14,7 +15,9 @@ $ cd c_formatter_42
 $ ./c_formatter_42 --install
 ```
 
-### Manual
+### vim plugin
+
+#### Manual installation
 
 ```sh
 git clone https://github.com/cacharle/c_formatter_42.vim
@@ -22,7 +25,7 @@ cd c_formatter_42.vim
 ./install
 ```
 
-### [Plug](https://github.com/junegunn/vim-plug)
+#### [Plug](https://github.com/junegunn/vim-plug)
 
 ```vim
 call plug#begin()
