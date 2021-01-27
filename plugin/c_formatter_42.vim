@@ -29,7 +29,7 @@ if g:c_formatter_42_set_equalprg
 endif
 
 if g:c_formatter_42_format_on_save
-    autocmd BufWritePre *.c,*.h :call s:CFormatter42()
+    autocmd BufWritePre *.c :call s:CFormatter42()
 endif
 
 autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
