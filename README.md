@@ -2,7 +2,7 @@
 
 Vim plugin for [c\_formatter\_42](https://github.com/dawnbeen/c_formatter_42).
 
-![preview](preview.gif)
+![preview](https://i.imgur.com/9j2bm3B.gif)
 
 ## Installation
 
