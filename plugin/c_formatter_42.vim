@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2021/01/12 11:48:34 by cacharle         ###   ########.fr        "
+"    Updated: 2021/02/08 22:14:51 by charles          ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -29,7 +29,7 @@ if g:c_formatter_42_set_equalprg
 endif
 
 if g:c_formatter_42_format_on_save
-    autocmd BufWritePre *.c :call s:CFormatter42()
+    autocmd BufWritePre *.c,*.h :call s:CFormatter42()
 endif
 
 autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
