@@ -6,13 +6,18 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2021/01/12 11:48:34 by cacharle         ###   ########.fr        "
+"    Updated: 2021/02/24 09:50:01 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
 let g:c_formatter_42_exec           = get(g:, 'c_formatter_42_exec', 'c_formatter_42')
 let g:c_formatter_42_set_equalprg   = get(g:, 'c_formatter_42_set_equalprg', 0)
 let g:c_formatter_42_format_on_save = get(g:, 'c_formatter_42_format_on_save', 0)
+
+if !executable(g:c_formatter_42_exec)
+    echom 'Installing c_formatter_42'
+    !pip3 install --user c-formatter-42
+endif
 
 function! s:CFormatter42()
     normal! mq
