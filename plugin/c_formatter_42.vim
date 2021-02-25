@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2021/02/24 09:54:29 by cacharle         ###   ########.fr        "
+"    Updated: 2021/02/25 16:31:11 by cacharle         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -30,15 +30,19 @@ function! s:CFormatter42()
 endfunction
 
 if g:c_formatter_42_set_equalprg
-    let &l:equalprg = s:formatter_path
+    let &l:equalprg = g_c_formatter_42_exec
 endif
+
+augroup c_formatter_42
+    autocmd!
+augroup END
 
 if g:c_formatter_42_format_on_save
-    autocmd BufWritePre *.c,*.h :call s:CFormatter42()
+    autocmd c_formatter_42 BufWritePre *.c,*.h :call s:CFormatter42()
 endif
 
-autocmd FileType c,cpp command! CFormatter42 call s:CFormatter42()
-autocmd FileType c,cpp nnoremap <F2> :CFormatter42<CR>
+autocmd c_formatter_42 FileType c,cpp command! CFormatter42 call s:CFormatter42()
+autocmd c_formatter_42 FileType c,cpp nnoremap <F2> :CFormatter42<CR>
 
 function! s:Norminette()
     let l:current_file = expand('%:p')
@@ -68,5 +72,4 @@ function! s:Norminette()
     " let &makeprg = l:saved_makeprg
 endfunction
 
-autocmd FileType c,cpp command! Norminette call s:Norminette()
-
+autocmd c_formatter_42 FileType c,cpp command! Norminette call s:Norminette()
