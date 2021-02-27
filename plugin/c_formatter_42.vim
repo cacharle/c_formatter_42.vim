@@ -6,7 +6,7 @@
 "    By: cacharle <me@cacharle.xyz>                 +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/10/04 16:53:57 by cacharle          #+#    #+#              "
-"    Updated: 2021/02/25 16:31:11 by cacharle         ###   ########.fr        "
+"    Updated: 2021/02/27 22:41:23 by jihypark         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -30,7 +30,7 @@ function! s:CFormatter42()
 endfunction
 
 if g:c_formatter_42_set_equalprg
-    let &l:equalprg = g_c_formatter_42_exec
+    let &l:equalprg = g:c_formatter_42_exec
 endif
 
 augroup c_formatter_42
