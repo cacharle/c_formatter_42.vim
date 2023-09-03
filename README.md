@@ -22,6 +22,8 @@ cd c_formatter_42.vim
 ./install
 ```
 
+> There is an `./uninstall` script aswell
+
 ## Usage
 
 Execute `:CFormatter42` or press `F2` to format the current file.

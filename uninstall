@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -v "$HOME"/.vim/plugin/c_formatter_42.vim
+rm -v "$HOME"/.vim/doc/c_formatter_42.vim.txt
